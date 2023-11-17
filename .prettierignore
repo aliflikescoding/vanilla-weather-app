@@ -3,10 +3,7 @@ node_modules
 
 # Ignore build and dist directories
 build
-dist
-
-# Ignore specific files
-src/ignore-this-file.js
+dist/main.js
 
 # Ignore all markdown files
 *.md
