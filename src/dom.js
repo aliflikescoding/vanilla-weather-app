@@ -1,7 +1,8 @@
 const dom = (() => {
+  const body = document.querySelector("body");
+  const root = document.documentElement;
+  
   function changeMode() {
-    const body = document.querySelector("body");
-    const root = document.documentElement;
     if (window.matchMedia('(prefers-color-scheme: light)').matches) {
       body.classList.add("light");
       root.style.setProperty("--background", "#f1f1f1");
