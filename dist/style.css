@@ -147,6 +147,10 @@ main {
   margin-left: 5px;
 }
 
+#buttonTemp {
+  font-weight: 600;
+}
+
 /* header */
 header {
   display: flex;
