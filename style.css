@@ -120,6 +120,16 @@ select {
   background-color: var(--background-shade);
 }
 
+/* cards */
+.card {
+  background-color: var(--background-shade);
+  color: var(--text);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* general */
 
 body {
@@ -130,8 +140,12 @@ body {
 
 .container {
   margin-top: 15px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+main {
+  margin-top: 30px;
 }
 
 /* header */
