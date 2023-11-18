@@ -1,8 +1,10 @@
+import dom from "./dom";
+
 const event = (() => {
   function modeListener() {
     const buttonMode = document.querySelector("#buttonMode");
     buttonMode.addEventListener("click", () => {
-      console.log("test");
+      dom.changeMode();
     });
   }
 
@@ -15,8 +17,8 @@ const event = (() => {
 
   return {
     modeListener: modeListener,
-    dataListener: dataListener
-  }
+    dataListener: dataListener,
+  };
 })();
 
 export default event;
