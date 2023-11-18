@@ -84,15 +84,6 @@ select {
   --text: #000000; 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a1120;
-    --background-shade: #1b212e;
-    --text: #ffffff;
-    --some-text: var(--text);
-  }
-}
-
 /* button */
 .button {
   cursor: pointer;
