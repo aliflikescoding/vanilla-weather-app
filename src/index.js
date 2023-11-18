@@ -6,6 +6,7 @@ const getData = async () => {
     );
     const data = await response.json();
     console.log(data);
+    console.log(data.location.name);
   } catch (error) {
     console.error("Error fetching data", error);
   }
