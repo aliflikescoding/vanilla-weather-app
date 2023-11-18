@@ -78,22 +78,52 @@ select {
 :root {
   --light-blue: #04a9fe;
   --yellow-orange: #ffa037;
+  --background: #f1f1f1;
+  --background-shade: #ffffff;
+  --text: #000000; 
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a1120;
     --background-shade: #1b212e;
     --text: #ffffff;
   }
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #ffffff;
-    --background-shade: #f1f1f1;
+    --background: #f1f1f1;
+    --background-shade: #ffffff;
     --text: #000000; 
   }
+}
+
+/* button */
+.button {
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.2s;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+}
+
+.button:hover {
+  transform: scale(0.9);
+}
+
+.button-primary {
+  color: var(--text);
+  background-color: var(--light-blue);
+}
+
+.button-shade {
+  color: var(--text);
+  background-color: var(--background-shade);
 }
 
 /* general */
@@ -105,7 +135,9 @@ body {
 }
 
 .container {
-  margin: 15px 50px;
+  margin-top: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 /* header */
@@ -121,20 +153,55 @@ header {
   font-size: 1.5rem;
 }
 
-.logo-area > * {
-  margin: 0 5px;
-}
-
 .logo-text {
   letter-spacing: 3px;
 }
 
 .logo-icon {
   font-size: 3rem;
+  margin-left: 5px;
 }
 
 .search-area {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.search-bar {
+  width: 500px;
+  height: 50px;
+  padding-right: 45px;
+  padding-left: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  background-color: var(--background-shade);
+  color: var(--text);
+}
+
+.search-button {
+  cursor: pointer;
+  right: 10px;
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  font-weight: 1000;
+  box-shadow: none;
+  background-color: var(--background-shade);
+  color: var(--text);
+}
+
+.search-button::-webkit-search-cancel-button {
+  color: var(--text);
+}
+
+#button-mode {
+  margin: 50px;
+}
+
+/* animations */
