@@ -148,6 +148,14 @@ main {
   margin-top: 30px;
 }
 
+.header-button-area {
+  display: flex;
+}
+
+#buttonMode {
+  margin-left: 5px;
+}
+
 /* header */
 header {
   display: flex;
