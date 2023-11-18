@@ -76,10 +76,11 @@ select {
 }
 
 :root {
-  --light-blue: #04a9fe;
+  --light-blue: #207bfa;
   --yellow-orange: #ffa037;
   --background: #f1f1f1;
   --background-shade: #ffffff;
+  --some-text: var(--light-blue);
   --text: #000000; 
 }
 
@@ -88,6 +89,7 @@ select {
     --background: #0a1120;
     --background-shade: #1b212e;
     --text: #ffffff;
+    --some-text: --text;
   }
 } */
 
@@ -122,7 +124,7 @@ select {
 }
 
 .button-shade {
-  color: var(--text);
+  color: var(--some-text);
   background-color: var(--background-shade);
 }
 
@@ -151,6 +153,7 @@ header {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  color: var(--some-text);
 }
 
 .logo-text {
@@ -193,11 +196,7 @@ header {
   font-weight: 1000;
   box-shadow: none;
   background-color: var(--background-shade);
-  color: var(--text);
-}
-
-.search-button::-webkit-search-cancel-button {
-  color: var(--text);
+  color: var(--some-text);
 }
 
 #button-mode {
