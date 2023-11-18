@@ -1,4 +1,4 @@
-const dom = (function() {
+const dom = (() => {
   function changeMode() {
     const body = document.querySelector("body");
     const root = document.documentElement;
@@ -27,7 +27,6 @@ const dom = (function() {
   return {
     changeMode: changeMode
   }
-
 })();
 
 export default dom;
