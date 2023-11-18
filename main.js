@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/dom.js":
+/*!********************!*\
+  !*** ./src/dom.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst dom = (function() {\n  function changeMode() {\n    const body = document.querySelector(\"body\");\n    const root = document.documentElement;\n    if (window.matchMedia('(prefers-color-scheme: light)').matches) {\n      body.classList.add(\"light\");\n      root.style.setProperty(\"--background\", \"#f1f1f1\");\n      root.style.setProperty(\"--background-shade\", \"#ffffff\");\n      root.style.setProperty(\"--text\", \"#000000\");\n      root.style.setProperty(\"--some-text\", \"var(--light-blue)\");\n    }\n    if (body.classList.contains(\"light\")) {\n      body.classList.remove(\"light\");\n      root.style.setProperty(\"--background\", \"#0a1120\");\n      root.style.setProperty(\"--background-shade\", \"#1b212e\");\n      root.style.setProperty(\"--text\", \"#ffffff\");\n      root.style.setProperty(\"--some-text\", \"var(--text)\");\n    } else {\n      body.classList.add(\"light\");\n      root.style.setProperty(\"--background\", \"#f1f1f1\");\n      root.style.setProperty(\"--background-shade\", \"#ffffff\");\n      root.style.setProperty(\"--text\", \"#000000\");\n      root.style.setProperty(\"--some-text\", \"var(--light-blue)\");\n    }\n  }\n\n  return {\n    changeMode: changeMode\n  }\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dom);\n\n//# sourceURL=webpack://weather_app_project/./src/dom.js?");
+
+/***/ }),
+
 /***/ "./src/events.js":
 /*!***********************!*\
   !*** ./src/events.js ***!
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst event = (() => {\n  function modeListener() {\n    const buttonMode = document.querySelector(\"#buttonMode\");\n    buttonMode.addEventListener(\"click\", () => {\n      console.log(\"test\");\n    });\n  }\n\n  function dataListener() {\n    const searchButton = document.querySelector(\"#searchButton\");\n    searchButton.addEventListener(\"click\", () => {\n      console.log(\"test2\");\n    });\n  }\n\n  return {\n    modeListener: modeListener,\n    dataListener: dataListener\n  }\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (event);\n\n\n//# sourceURL=webpack://weather_app_project/./src/events.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\nconst event = (() => {\n  function modeListener() {\n    const buttonMode = document.querySelector(\"#buttonMode\");\n    buttonMode.addEventListener(\"click\", () => {\n      _dom__WEBPACK_IMPORTED_MODULE_0__[\"default\"].changeMode();\n    });\n  }\n\n  function dataListener() {\n    const searchButton = document.querySelector(\"#searchButton\");\n    searchButton.addEventListener(\"click\", () => {\n      console.log(\"test2\");\n    });\n  }\n\n  return {\n    modeListener: modeListener,\n    dataListener: dataListener,\n  };\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (event);\n\n\n//# sourceURL=webpack://weather_app_project/./src/events.js?");
 
 /***/ }),
 

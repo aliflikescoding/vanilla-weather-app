@@ -84,20 +84,12 @@ select {
   --text: #000000; 
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #0a1120;
     --background-shade: #1b212e;
     --text: #ffffff;
-    --some-text: --text;
-  }
-} */
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #f1f1f1;
-    --background-shade: #ffffff;
-    --text: #000000; 
+    --some-text: var(--text);
   }
 }
 
