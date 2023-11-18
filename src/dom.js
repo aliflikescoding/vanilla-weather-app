@@ -2,6 +2,7 @@ const dom = (() => {
   const body = document.querySelector("body");
   const root = document.documentElement;
   const buttonModeText = document.querySelector("#buttonModeText");
+  const buttonMode = document.querySelector("#buttonTemp");
 
   function checkMode() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -35,9 +36,28 @@ const dom = (() => {
     }
   }
 
+  function search() {
+    console.log('search');
+  }
+
+  function changeTemp() {
+    if (body.classList.contains("celcius")) {
+      body.classList.remove("celcius");
+      body.classList.add("farenheit")
+      buttonMode.textContent = "°F";
+    }
+    else {
+      body.classList.remove("farenheit");
+      body.classList.add("celcius")
+      buttonMode.textContent = "°C";
+    }
+  }
+
   return {
     changeMode: changeMode,
-    checkMode: checkMode
+    checkMode: checkMode,
+    search: search,
+    changeTemp: changeTemp
   }
 })();
 

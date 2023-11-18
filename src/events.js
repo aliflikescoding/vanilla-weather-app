@@ -11,13 +11,21 @@ const event = (() => {
   function dataListener() {
     const searchButton = document.querySelector("#searchButton");
     searchButton.addEventListener("click", () => {
-      console.log("test2");
+      dom.search();
+    });
+  }
+
+  function tempListener() {
+    const buttonTemp = document.querySelector("#buttonTemp");
+    buttonTemp.addEventListener("click", () => {
+      dom.changeTemp();
     });
   }
 
   return {
     modeListener: modeListener,
     dataListener: dataListener,
+    tempListener: tempListener
   };
 })();
 
