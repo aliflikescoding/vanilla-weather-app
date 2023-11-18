@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://weather_app_project/./src/index.js?");
+eval("const getData = async () => {\n  try {\n    const response = await fetch(\n      \"https://api.weatherapi.com/v1/current.json?key=94beffc60c1048cbabc81744231211&q=jakarta\",\n      { mode: \"cors\" }\n    );\n    const data = await response.json();\n    console.log(data);\n  } catch (error) {\n    console.error(\"Error fetching data\", error);\n  }\n};\ngetData();\n\n//# sourceURL=webpack://weather_app_project/./src/index.js?");
 
 /***/ })
 
