@@ -96,7 +96,45 @@ select {
   }
 }
 
+/* general */
+
 body {
   font-family: 'Nunito', sans-serif;
   background-color: var(--background);
+  color: var(--text);
+}
+
+.container {
+  margin: 15px 50px;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.logo-area > * {
+  margin: 0 5px;
+}
+
+.logo-text {
+  letter-spacing: 3px;
+}
+
+.logo-icon {
+  font-size: 3rem;
+}
+
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
