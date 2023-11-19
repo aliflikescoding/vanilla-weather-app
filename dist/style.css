@@ -74,6 +74,11 @@ select {
   }
 }
 
+.invis {
+  display: none;
+  pointer-events: none;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -142,6 +147,10 @@ a:active {
   justify-content: center;
 }
 
+.card > * {
+  margin: 15px;
+}
+
 /* general */
 
 body {
@@ -164,10 +173,7 @@ body {
   color: var(--some-text);
 }
 
-main {
-  margin-top: 30px;
-  min-height: 100vh;
-}
+
 
 .header-button-area {
   display: flex;
@@ -294,6 +300,18 @@ header {
 }
 
 /* main */
+main {
+  margin-top: 30px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.loading {
+  font-size: 5rem;
+}
+
 .current {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
