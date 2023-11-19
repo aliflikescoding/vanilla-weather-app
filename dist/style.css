@@ -290,3 +290,46 @@ header {
 }
 
 /* animations */
+
+
+/* mobile and tablet */
+@media (max-width: 1314px) {
+  .current {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+  }
+  
+  .card {
+    width: 75%;
+    justify-self: center;
+  }
+
+  .current-card-1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .current-card-2 { grid-area: 2 / 1 / 3 / 2; }
+  .current-card-3 { grid-area: 3 / 1 / 4 / 2; }
+  .current-card-4 { grid-area: 4 / 1 / 5 / 2; }
+  .current-card-5 { grid-area: 5 / 1 / 6 / 2; }
+}
+
+@media (max-width: 1064px) {
+  .logo-text {
+    display: none;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 878px) {
+  .container {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .search-bar {
+    width: 300px;
+    padding-right: 45px;
+  }
+}
