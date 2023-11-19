@@ -10,7 +10,8 @@ const event = (() => {
 
   function dataListener() {
     const searchButton = document.querySelector("#searchButton");
-    searchButton.addEventListener("click", () => {
+    searchButton.addEventListener("click", (event) => {
+      event.preventDefault();
       dom.search();
     });
   }

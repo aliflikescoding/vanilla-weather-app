@@ -3,6 +3,7 @@ const dom = (() => {
   const root = document.documentElement;
   const buttonModeText = document.querySelector("#buttonModeText");
   const buttonMode = document.querySelector("#buttonTemp");
+  const searchBar = document.querySelector("#searchBar");
 
   function checkMode() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -37,7 +38,9 @@ const dom = (() => {
   }
 
   function search() {
-    console.log('search');
+    let location = searchBar.value;
+    searchBar.value = "";
+    console.log(location);
   }
 
   function changeTemp() {
