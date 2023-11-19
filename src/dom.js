@@ -1,67 +1,100 @@
+import domLogic from "./domLogic";
+
 const dom = (() => {
-  const body = document.querySelector("body");
-  const root = document.documentElement;
-  const buttonModeText = document.querySelector("#buttonModeText");
-  const buttonMode = document.querySelector("#buttonTemp");
-  const searchBar = document.querySelector("#searchBar");
+  const main = document.querySelector("main");
 
-  function checkMode() {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      body.classList.remove("light");
-      buttonModeText.classList.remove("bi-sun-fill");
-      buttonModeText.classList.add("bi-moon-fill");
-      root.style.setProperty("--background", "#0a1120");
-      root.style.setProperty("--background-shade", "#1b212e");
-      root.style.setProperty("--text", "#ffffff");
-      root.style.setProperty("--some-text", "var(--text)");
-    }
-  }
+  function showCurrent(data) {
+    const temp = domLogic.getTemp(data);
+    const tempFeelsLike = domLogic.getFeelsLikeTemp(data);
 
-  function changeMode() {
-    if (body.classList.contains("light")) {
-      body.classList.remove("light");
-      buttonModeText.classList.remove("bi-sun-fill");
-      buttonModeText.classList.add("bi-moon-fill");
-      root.style.setProperty("--background", "#0a1120");
-      root.style.setProperty("--background-shade", "#1b212e");
-      root.style.setProperty("--text", "#ffffff");
-      root.style.setProperty("--some-text", "var(--text)");
-    } else {
-      body.classList.add("light");
-      buttonModeText.classList.remove("bi-moon-fill");
-      buttonModeText.classList.add("bi-sun-fill");
-      root.style.setProperty("--background", "#f1f1f1");
-      root.style.setProperty("--background-shade", "#ffffff");
-      root.style.setProperty("--text", "#000000");
-      root.style.setProperty("--some-text", "var(--light-blue)");
-    }
-  }
+    const currentCurrentCard1 = `
+    <div class="current-card-1">
+      <h1 class="some-text"><i class="bi bi-geo-alt-fill"></i> ${data.location.name}, ${data.location.country}</h1>
+      <h3 class="text-shade">${domLogic.formatDate(data.location.localtime)}</h3>
+    </div>
+    `;
+    const currentCurrentCard2 = `
+    <div class="card current-card-2">
+      <h1 class="five-rem some-text"></i>${temp}</h1>
+      <div class="flex">
+      <img src="${data.current.condition.icon}" height="80px" width="80px" alt="icon"> 
+        <div class="flex flex-column">
+          <h2 class="two-rem">${data.current.condition.text}</h2>
+          <h2 class="two-rem text-shade">Feels like ${tempFeelsLike}</h2>
+        </div>
+      </div>
+    </div>
+    `;
+    const currentCurrentCard3 = `
+    <div class="card current-card-3">
+      <div class="card-container">
+        <div>
+          <h2 class="some-text"><i class="bi bi-wind"></i>  wind</h2>
+          <h1 class="text-shade">${domLogic.getWind(data)}</h1>
+        </div>
+        <div>
+          <h2 class="some-text"><i class="bi bi-eye"></i>  visibility</h2>
+          <h1 class="text-shade">${domLogic.getVis(data)}</h1>
+        </div>
+        <div>
+          <h2 class="some-text"><i class="bi bi-droplet-fill"></i> humidity</h2>
+          <h1 class="text-shade">${data.current.humidity}</h1>
+        </div>
+      </div>
+    </div>
+    `;
+    const currentCurrentCard4 = `
+          <div class="card current-card-4">
+            <div class="card-container">
+              <div>
+                <h2 class="some-text"><i class="bi bi-cloud-fill"></i>  cloud</h2>
+                <h1 class="text-shade">${data.current.cloud}</h1>
+              </div>
+              <div>
+                <h2 class="some-text"><i class="bi bi-tornado"></i>  wind degree</h2>
+                <h1 class="text-shade">${data.current.wind_degree}</h1>
+              </div>
+              <div>
+                <h2 class="some-text"><i class="bi bi-brightness-high-fill"></i> UV</h2>
+                <h1 class="text-shade">${data.current.uv}</h1>
+              </div>
+            </div>
+          </div>
+    `;
+    const currentCurrentCard5 = `
+          <div class="card current-card-5">
+            <div class="card-container">
+              <div>
+                <h2 class="some-text"><i class="bi bi-compass-fill"></i>  wind direction</h2>
+                <h1 class="text-shade">${data.current.wind_dir}</h1>
+              </div>
+              <div>
+                <h2 class="some-text">gust</h2>
+                <h1 class="text-shade">${domLogic.getGust(data)}</h1>
+              </div>
+              <div>
+                <h2 class="some-text"><i class="bi bi-arrow-down-square-fill"></i> Pressure</h2>
+                <h1 class="text-shade">${domLogic.getPressure(data)}</h1>
+              </div>
+            </div>
+          </div>
+    `;
+    const current = `
+      <div class="current">
+        ${currentCurrentCard1}
+        ${currentCurrentCard2}
+        ${currentCurrentCard3}
+        ${currentCurrentCard4}
+        ${currentCurrentCard5}
+      </div>
+    `;
 
-  function search() {
-    let location = searchBar.value;
-    searchBar.value = "";
-    console.log(location);
-  }
-
-  function changeTemp() {
-    if (body.classList.contains("celcius")) {
-      body.classList.remove("celcius");
-      body.classList.add("farenheit")
-      buttonMode.textContent = "°F";
-    }
-    else {
-      body.classList.remove("farenheit");
-      body.classList.add("celcius")
-      buttonMode.textContent = "°C";
-    }
+    main.innerHTML = current;
   }
 
   return {
-    changeMode: changeMode,
-    checkMode: checkMode,
-    search: search,
-    changeTemp: changeTemp
-  }
+    showCurrent: showCurrent,
+  };
 })();
 
 export default dom;

@@ -1,25 +1,26 @@
-import dom from "./dom";
+import evenFunction from "./evenFunction";
+
 
 const event = (() => {
   function modeListener() {
     const buttonMode = document.querySelector("#buttonMode");
     buttonMode.addEventListener("click", () => {
-      dom.changeMode();
+      evenFunction.changeMode();
     });
   }
 
   function dataListener() {
     const searchButton = document.querySelector("#searchButton");
-    searchButton.addEventListener("click", (event) => {
+    searchButton.addEventListener("click", async (event) => {
       event.preventDefault();
-      dom.search();
+      evenFunction.search();
     });
   }
 
   function tempListener() {
     const buttonTemp = document.querySelector("#buttonTemp");
     buttonTemp.addEventListener("click", () => {
-      dom.changeTemp();
+      evenFunction.changeTemp();
     });
   }
 

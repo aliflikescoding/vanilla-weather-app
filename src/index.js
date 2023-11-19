@@ -1,7 +1,7 @@
 import event from "./events";
-import dom from "./dom";
+import evenFunction from "./evenFunction";
 
-dom.checkMode();
+evenFunction.checkMode();
 event.dataListener();
 event.modeListener();
 event.tempListener();
