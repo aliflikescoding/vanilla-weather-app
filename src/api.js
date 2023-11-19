@@ -6,7 +6,7 @@ const api = (() => {
   const searchCurrent = async (location) => {
     try {
       const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`,
+        `https://api.weatherapi.com/v1/current.json?key=${key}&q=${location}`,
         { mode: "cors" }
       );
       const loading = document.querySelector(".loading");
@@ -20,8 +20,8 @@ const api = (() => {
   };
 
   return {
-    searchCurrent: searchCurrent
-  }
+    searchCurrent: searchCurrent,
+  };
 })();
 
 export default api;
