@@ -9,7 +9,7 @@ const dom = (() => {
 
     const currentCurrentCard1 = `
     <div class="current-card-1">
-      <h1 class="some-text"><i class="bi bi-geo-alt-fill"></i> ${data.location.name}, ${data.location.country}</h1>
+      <h1 id="locationText" class="some-text"><i class="bi bi-geo-alt-fill"></i> ${data.location.name}, ${data.location.country}</h1>
       <h3 class="text-shade">${domLogic.formatDate(data.location.localtime)}</h3>
     </div>
     `;
