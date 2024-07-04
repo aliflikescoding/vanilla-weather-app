@@ -4,7 +4,7 @@
 
 ## Output
 
-Visit [The Live Page](https://aliflikescoding.github.io/vanilla-restaurant-page/) to view the details
+Visit [The Live Page](https://aliflikescoding.github.io/vanilla-weather-app/) to view the details
 
 ## Description
 
@@ -41,7 +41,7 @@ npm i / install
 ### 🔗 Cloning the repository
 
 ```shell
-git clone https://github.com/aliflikescoding/vanilla-restaurant-page.git
+git clone https://github.com/aliflikescoding/vanilla-weather-app.git
 ```
 
 
